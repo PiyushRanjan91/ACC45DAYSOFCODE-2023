@@ -1,0 +1,23 @@
+<iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int A[5], P;
+        cin >> A[0] >> A[1] >> A[2] >> A[3] >> A[4] >> P;
+
+        int total_office_hours = A[0] + A[1] + A[2] + A[3] + A[4];
+        int total_home_hours_needed = total_office_hours * P;
+
+        if (total_home_hours_needed <= 24 * 5) {
+            cout << "No" << endl;
+        } else {
+            cout << "Yes" << endl;
+        }
+    }
+
+    return 0;
+}
