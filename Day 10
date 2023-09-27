@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int X, Y;
+        cin >> X >> Y;
+
+        int chocolates = X / Y;
+        cout << chocolates << endl;
+    }
+
+    return 0;
+}
