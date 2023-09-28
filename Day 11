@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> a(n);
+        unordered_map<int, int> frequency;
+
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+            frequency[a[i]]++;
+        }
+
+        int maxFrequency = 0;
+
+        for (auto it = frequency.begin(); it != frequency.end(); ++it) {
+            if (it->second > maxFrequency) {
+                maxFrequency = it->second;
+            }
+        }
+
+        int minOperations = n - maxFrequency;
+
+        cout << minOperations << endl;
+    }
+
+    return 0;
+}
