@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int X, Y, Z;
+        cin >> X >> Y >> Z;
+
+        int initial_time = Y / X;
+
+        if (initial_time >= Z) {
+            cout << "0" << endl;
+        } else {
+            int delay = Z - initial_time;
+            cout << delay << endl;
+        }
+    }
+
+    return 0;
+}
