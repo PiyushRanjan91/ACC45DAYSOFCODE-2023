@@ -1,0 +1,23 @@
+#include <iostream>
+
+int main() {
+    int T;
+    std::cin >> T;
+
+    while (T--) {
+        int N, X;
+        std::cin >> N >> X;
+
+        int operations = 0;
+        
+        if (X <= N / 2) {
+            operations = X;
+        } else {
+            operations = N - X;
+        }
+
+        std::cout << operations << std::endl;
+    }
+
+    return 0;
+}
