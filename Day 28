@@ -1,0 +1,37 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int countPunishedPairs(string s) {
+    int punishedPairs = 0;
+    stack<char> students;
+
+    for (char activity : s) {
+        if (activity == '*') {
+            while (!students.empty()) {
+                students.pop();
+            }
+        } else if (activity == '<') {
+            students.push('<');
+        } else if (activity == '>' && !students.empty()) {
+            students.pop();
+            punishedPairs++;
+        }
+    }
+
+    return punishedPairs;
+}
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        string s;
+        cin >> s;
+        int punishedPairs = countPunishedPairs(s);
+        cout << punishedPairs << endl;
+    }
+
+    return 0;
+}
